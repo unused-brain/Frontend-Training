@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div style="margin-top: 15%;" >
+        <div style="border-color:orange; border-style: solid; border-radius: 100%; width: 200px; height: 200px;
+        margin-left: 40%;" class="outer" onclick="alert_('c1')">
+
+            <div style="border-color:gray; border-style: solid; border-radius: 100%; width: 150px;
+            height: 150px; margin-left: 11%; margin-top: 22px;" class="middle" onclick="alert_('c2')">
+
+                <div style="border-color:green; border-style: solid; border-radius: 100%; width: 100px;
+                height: 100px; margin-left: 15%; margin-top: 22px;" class="inner" onclick="alert_('c3')">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function alert_(classname){
+            alert(`You clicked ${classname}`);
+        }
+    </script>
+
+</body>
+
+</html>

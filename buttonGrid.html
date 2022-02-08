@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 1px solid blue;
+            text-align: center;
+        }
+
+        #matrix {
+            border: 1px solid red;
+            margin: 0 auto;
+            padding: 5px;
+        }
+
+        #matrix tr,
+        td {
+            padding: 5px;
+        }
+
+        #matrix button {
+            height: 80px;
+            width: 150px;
+            border: none;
+            font-family: helvetica;
+            font-weight: bold;
+        }
+
+        #b1,
+        #b2,
+        #b3,
+        #b4,
+        #b4,
+        #b6,
+        #b7,
+        #b8,
+        #b9 {
+            background-color: rgba(255, 153, 51, 0.5);
+        }
+
+        #b1:hover,
+        #b3:hover {
+            background-color: rgb(255, 153, 51);
+        }
+
+        #b5 {
+            background-color: rgba(15, 138, 15, 0.5);
+        }
+
+        #b5:hover {
+            background-color: rgb(15, 138, 15);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table id="matrix">
+            <tr>
+                <td><button id="b1">1</button></td>
+                <td><button id="b2">2</button></td>
+                <td><button id="b3">3</button></td>
+            </tr>
+
+            <tr>
+                <td><button id="b4">4</button></td>
+                <td><button id="b5" onclick="rotate()">5</button></td>
+                <td><button id="b6">6</button></td>
+            </tr>
+
+            <tr>
+                <td><button id="b7">7</button></td>
+                <td><button id="b8">8</button></td>
+                <td><button id="b9">9</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function rotate() {
+            var val = document.getElementById("b1").innerHTML;
+
+            // left-column
+            document.getElementById("b1").innerHTML = document.getElementById("b4").innerHTML;
+            document.getElementById("b4").innerHTML = document.getElementById("b7").innerHTML;
+
+            //last-row
+            document.getElementById("b7").innerHTML = document.getElementById("b8").innerHTML;
+            document.getElementById("b8").innerHTML = document.getElementById("b9").innerHTML;
+
+            // right-column
+            document.getElementById("b9").innerHTML = document.getElementById("b6").innerHTML;
+            document.getElementById("b6").innerHTML = document.getElementById("b3").innerHTML;
+
+            // top-row
+            document.getElementById("b3").innerHTML = document.getElementById("b2").innerHTML;
+            document.getElementById("b2").innerHTML = val;
+        }
+    </script>
+</body>
+
+</html>

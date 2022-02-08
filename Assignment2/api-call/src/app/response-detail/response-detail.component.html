@@ -1,0 +1,17 @@
+<h1>Response From URL</h1>
+<div *ngIf="response.length">
+    <table>
+        <tr>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+        <tr *ngFor="let response of response">
+            <td>{{response.userId}}</td>
+            <td>{{response.id}}</td>
+            <td>{{response.title}}</td>
+            <td>{{response.body}}</td>
+        </tr>
+    </table>
+</div>
